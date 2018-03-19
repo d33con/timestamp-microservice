@@ -17,9 +17,10 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
-app.get("/:timestamp", function (req, res) {
+app.get("/:timestamp", (req, res) => {
   console.log(req, res);
-  res.send("you");
+  const time = new Date(req.params.timestamp);
+  res.send(time);
 });
 
 // Simple in-memory store
