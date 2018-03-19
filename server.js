@@ -20,16 +20,11 @@ app.get("/", (request, response) => {
 })
 
 app.get("/:timestamp", (req, res) => {
-  const millis = Number(req.params.timestamp) * 1000;
-  const date = moment(millis);
-  const dateString = date.toISOString();
-  const year = dateString.substr(0,4);
-  const month = dateString.substr(5,2) < 10 ? `0${dateString.substr(5,1)}` : dateString.substr(5,2);
-  const day = dateString.substr(8,2) < 10 ? `0${dateString.substr(8,1)}` : dateString.substr(8,2);
-  const natural = `${month} ${day},${year}, ${dateString}`;
+  const milliseconds = Number(req.params.timestamp) * 1000;
+  const date = moment(milliseconds).format("MMMM Do, YYYY");
   const output = {
-    unix: millis,
-    natural
+    unix: milliseconds,
+    natural: date
   }
   res.send(output);
 });
