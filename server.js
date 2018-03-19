@@ -19,8 +19,12 @@ app.get("/", (request, response) => {
 
 app.get("/:timestamp", (req, res) => {
   const millis = Number(req.params.timestamp);
-  const date = new Date(millis * 1000)
-  res.send(date);
+  const date = new Date(millis * 1000);
+  const output = {
+    unix: millis * 1000,
+    natural: date.toISOString()
+  }
+  res.send(output);
 });
 
 // listen for requests :)
