@@ -1,6 +1,7 @@
 dependencies:
   body-parser: 1.18.2
   express: 4.16.3
+  moment: 2.21.0
 packages:
   /accepts/1.3.5:
     dependencies:
@@ -226,6 +227,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KI1+qOZu5DcW6wayYHSzR/tXKCDC5Om4s1z2QJjDULzLcmf3DvzS7oluY4HCTrc+9FiKmWUgeNLg7W3uIQvxtQ==
+  /moment/2.21.0:
+    dev: false
+    resolution:
+      integrity: sha512-TCZ36BjURTeFTM/CwRcViQlfkMvL1/vFISuNLO5GkcVm1+QHfbSiNqZuWeMFjj1/3+uAjXswgRk30j1kkLYJBQ==
   /ms/2.0.0:
     dev: false
     resolution:
@@ -368,3 +373,4 @@ shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.18.2
   express: ^4.16.3
+  moment: ^2.21.0

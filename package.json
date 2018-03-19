@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "body-parser": "^1.18.2"
+    "body-parser": "^1.18.2",
+    "moment": "^2.21.0"
   },
   "engines": {
     "node": "9.x"
