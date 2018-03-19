@@ -18,9 +18,9 @@ app.get("/", (request, response) => {
 })
 
 app.get("/:timestamp", (req, res) => {
-  console.log(req, res);
+  console.log(req.params, res);
   const time = new Date(req.params.timestamp);
-  res.send(time.toDateString());
+  res.send(time);
 });
 
 // Simple in-memory store
