@@ -17,6 +17,11 @@ app.get("/", (request, response) => {
   response.sendFile(__dirname + '/views/index.html')
 })
 
+app.get("/:timestamp", function (req, res) {
+  console.log(req, res);
+  res.send("you");
+});
+
 // Simple in-memory store
 const dreams = [
   "Find and count some sheep",
