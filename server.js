@@ -20,9 +20,13 @@ app.get("/", (request, response) => {
 app.get("/:timestamp", (req, res) => {
   const millis = Number(req.params.timestamp);
   const date = new Date(millis * 1000);
+  const dateString = date.toISOString();
+  const year = dateString.substr(0,4);
+  const month = dateString.substr(4,2);
+  const natural = `${month},${year}`;
   const output = {
     unix: millis * 1000,
-    natural: date.toISOString()
+    natural
   }
   res.send(output);
 });
