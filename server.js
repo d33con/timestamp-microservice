@@ -15,11 +15,13 @@ app.get("/", (request, response) => {
 })
 
 app.get("/:timestamp", (req, res) => {
+  const now = moment().valueOf();
   const milliseconds = Number(req.params.timestamp) * 1000;
   const date = moment(milliseconds).format("MMMM Do, YYYY");
   const output = {
     unix: milliseconds,
-    natural: date
+    natural: date,
+    now
   }
   if(output.natural !== "Invalid date") {
     res.send(output);
