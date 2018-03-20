@@ -27,13 +27,12 @@ app.get("/:timestamp", (req, res) => {
     const timestampMs = +timestamp * 1000;    
 
     if(timestampMs < unixNow) {    
-      const natural = moment(timestampMs).format("MMMM Do, YYYY");
-      output.unix = timestampMs;
+      const natural = moment(+timestamp * 1000).format("MMMM Do, YYYY");
+      output.unix = +timestamp;
       output.natural = natural
     } 
 
   } else {
-      const date = moment(timestamp, "MMMM Do, YYYY");
       output.unix = moment(timestamp).valueOf() / 1000;
       output.natural = timestamp;
   }
