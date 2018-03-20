@@ -15,18 +15,23 @@ app.get("/", (request, response) => {
 })
 
 app.get("/:timestamp", (req, res) => {
-  const now = moment().valueOf();
-  const milliseconds = Number(req.params.timestamp) * 1000;
-  const date = moment(milliseconds).format("MMMM Do, YYYY");
+  const unixNow = moment().valueOf();
+  const timestampMs = Number(req.params.timestamp) * 1000;
   const output = {
-    unix: milliseconds,
-    natural: date,
-    now
+    unix: 0,
+    natural: ""
   }
-  if(output.natural !== "Invalid date") {
-    res.send(output);
+  
+  if(timestampMs < unixNow) {    
+    const natural = moment(timestampMs).format("MMMM Do, YYYY");
+    output.unix = timestampMs;
+    output.natural = natural
+  } else {
+    output.unix = null;
+    output.natural = null
   }
-  res.send("null");
+  
+  res.send(output);
 });
 
 // listen for requests :)
