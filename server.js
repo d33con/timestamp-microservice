@@ -17,11 +17,12 @@ app.get("/", (request, response) => {
 app.get("/:timestamp", (req, res) => {
   const timestamp = req.params.timestamp;
   const output = {
-      unix: 0,
-      natural: ""
+      unix: null,
+      natural: null
   }
   
-  if(moment(+timestamp).isValid()) {
+  // if timestamp is a number
+  if(!isNan(+timestamp)) {
     const unixNow = moment().valueOf();
     const timestampMs = +timestamp * 1000;
     
@@ -31,14 +32,11 @@ app.get("/:timestamp", (req, res) => {
       output.unix = timestampMs;
       output.natural = natural
     } else {
-      output.unix = null;
-      output.natural = null
+      res.send(output);
     }
 
-    res.send(output);
   }
-    output.unix = null;
-    output.natural = null;
+
     res.send(output);
 });
 
