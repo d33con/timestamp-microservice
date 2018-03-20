@@ -31,10 +31,8 @@ app.get("/:timestamp", (req, res) => {
       output.unix = timestampMs;
       output.natural = natural
     } 
-    
-    res.send(output);
 
-  } else if(isNaN(timestamp)) {
+  } else {
       const date = moment(timestamp, "MMMM Do, YYYY");
       output.unix = moment(timestamp).valueOf() / 1000;
       output.natural = timestamp;
