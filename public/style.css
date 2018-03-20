@@ -9,5 +9,18 @@
 }
 
 body {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
   margin: 5% 10%;
+}
+
+.main {
+  
+
+.code-block {
+  background: rgba(0,0,0,0.2);
+  color: red;
+  font-size: 15px;
+  padding: 2px 10px;
+  border-radius: 2px;
+  margin-left: 20px;
 }
