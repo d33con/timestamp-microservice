@@ -23,10 +23,9 @@ app.get("/:timestamp", (req, res) => {
   
   // if timestamp is a number
   if(!isNaN(+timestamp)) {
-    const unixNow = moment().valueOf();
     const timestampMs = +timestamp * 1000;    
 
-    if(timestampMs < unixNow) {    
+    if(moment(timestampMs).isValid()) {    
       const natural = moment(timestampMs).format("MMMM Do, YYYY");
       output.unix = +timestamp;
       output.natural = natural
