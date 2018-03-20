@@ -21,7 +21,10 @@ app.get("/:timestamp", (req, res) => {
     unix: milliseconds,
     natural: date
   }
-  res.send(output);
+  if(output.natural !== "Invalid date") {
+    res.send(output);
+  }
+  res.send("null");
 });
 
 // listen for requests :)
