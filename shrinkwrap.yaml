@@ -1,5 +1,4 @@
 dependencies:
-  body-parser: 1.18.2
   express: 4.16.3
   moment: 2.21.0
 packages:
@@ -371,6 +370,5 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
-  body-parser: ^1.18.2
   express: ^4.16.3
   moment: ^2.21.0

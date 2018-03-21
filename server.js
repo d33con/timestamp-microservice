@@ -2,12 +2,10 @@
 // init project
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser')
 var moment = require('moment')
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'))
-app.use(bodyParser.json());
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", (request, response) => {
@@ -36,10 +34,7 @@ app.get("/:timestamp", (req, res) => {
       output.natural = timestamp;
   }
 
-  res.send(`
-      <h3>Unix: ${JSON.stringify(output.unix)}</h3>
-      <h3>Natural: ${JSON.stringify(output.natural)}</h3>
-  `);
+  res.send(`<h3>${JSON.stringify(output)}</h3>`);
 });
 
 // listen for requests :)

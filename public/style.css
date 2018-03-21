@@ -11,8 +11,20 @@
 body {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   margin: 50px 100px;
+}
+
+.page-wrapper {
   box-shadow: 0 25px 25px rgba(0,0,0,0.3);
   padding: 50px;
+  background: #b2dfdb;
+}
+
+footer {
+  text-align: right;
+}
+
+a {
+  text-decoration: none;
 }
 
 .code-block {

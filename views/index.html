@@ -20,49 +20,62 @@
     <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <header>
-      <h1>
-        API Basejump: Timestamp microservice
-      </h1>
-    </header>
+    <div class="page-wrapper">
+      <header>
+        <h1>
+          API Basejump: Timestamp microservice
+        </h1>
+      </header>
 
-    <main>
-      <blockquote class="border rounded">
-      <p>User Stories:</p>
-      <section>
-        <ol>
-          <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
-          <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
-          <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
-        </ol>
-      </section>
-      </blockquote>
-      <section>
-        <h3>
-          Example Usage:
-        </h3>
-        <p>
-          <code class="code-block">https://timestamp-ms.herokuapp.com/December%2015,%202015</code>          
-        </p>
-        <p>
-          <code class="code-block">https://timestamp-ms.herokuapp.com/1450137600</code>
-        </p>
-      </section>
-      <section>
-        <h3>
-          Example Output:
-        </h3>
-        <p>
-           <code class="code-block">{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
-        </p>
-      </section>
-    </main>
+      <main>
+        <blockquote class="border rounded">
+        <p>User Stories:</p>
+        <section>
+          <ol>
+            <li>I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016)</li>
+            <li>If it does, it returns both the Unix timestamp and the natural language form of that date.</li>
+            <li>If it does not contain a date or Unix timestamp, it returns null for those properties.</li>
+          </ol>
+        </section>
+        </blockquote>
+        <section>
+          <h3>
+            Example Usage:
+          </h3>
+          <p>
+            <code class="code-block">https://tasty-fireman.glitch.me/December%2015,%202015</code> 
+              <a href="https://tasty-fireman.glitch.me/December%2015,%202015" target="_blank">
+                <button>
+                  Try It
+                </button>
+              </a>
 
-    <footer>
-      <p>
-        Built by Oliver Bullen
-      </p>
-    </footer>
+          </p>
+          <p>
+            <code class="code-block">https://tasty-fireman.glitch.me/1450137600</code>
+            <a href="https://tasty-fireman.glitch.me/1450137600" target="_blank">
+                <button>
+                  Try It
+                </button>
+            </a>
+          </p>
+        </section>
+        <section>
+          <h3>
+            Example Output:
+          </h3>
+          <p>
+             <code class="code-block">{ "unix": 1450137600, "natural": "December 15, 2015" }</code>
+          </p>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          Built by <a href="https://oliverbullen.netlify.com">Oliver Bullen</a>
+        </p>
+      </footer>
+    </div>
 
     <!-- Your web-app is https, so your scripts need to be too -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
