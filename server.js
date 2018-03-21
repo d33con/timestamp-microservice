@@ -36,7 +36,7 @@ app.get("/:timestamp", (req, res) => {
       output.natural = timestamp;
   }
 
-  res.send(output);
+  res.send(`<p class="result">${JSON.stringify(output)}</p>`);
 });
 
 // listen for requests :)
